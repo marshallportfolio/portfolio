@@ -1,0 +1,435 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+    color: #2c3e50;
+    font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
+}
+
+.logo-area {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(#666, #f2f2f2);
+    width: 100%;
+    z-index: 3;
+}
+.site-nav {
+    list-style: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.site-nav li {
+    display: inline-block;
+    border-bottom: 4px solid #01c9c7;
+    border-top: 2px solid #666;
+    padding: 1.5em 1em 1em 1em;
+    margin: 0;
+}
+
+.site-nav li a, .site-nav li a:visited {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2em;
+}
+
+.site-nav li a:hover, .site-nav li a:visited:hover, .site-nav li a:active, .site-nav li a:visited:active {
+    color: #01c9c7;
+}
+
+.site-nav li.logo {
+    border-top: none;
+}
+
+.site-nav li.logo img {
+    width: 100%;
+    height: auto;
+    min-width: 255px;
+}
+
+.greeting {
+    font-size: 1.8em;
+    line-height: 0.1em;
+    margin: 3em 0 2em 0;
+    color: #666;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.greeting p {
+    margin: 0;
+    line-height: 1.8em;
+}
+
+.greeting .pop-title {
+    font-family: 'Poiret One', 'Ubuntu', 'Helvetica', 'Arial Black', sans-serif;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #01c9c7;
+    background: #222;
+    padding: 0 0.5em;
+}
+
+.resume-wrapper {
+    width: 90%;
+    margin: 2em auto;
+    padding: 0;
+    border: 1px solid #ddd;
+    background: #f2f2f2;
+}
+
+.resume-wrapper article > div {
+    padding: 2em 3em;
+}
+
+a, a:visited {
+    color: #2c3e50;
+    font-weight: 400;
+}
+
+.intro-blurb {
+    margin: 0;
+    padding: 0;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: minmax(1em, 3em) auto;
+    grid-column-gap: 24px;
+    grid-template-areas: "photo blurb-title"
+    "photo blurb";
+}
+
+.head-shot {
+    height: auto;
+    width: 100%;
+    min-width: 137px;
+    margin: 0;
+    padding: 0;
+    grid-area: photo;
+    align-self: start;
+}
+.head-shot figcaption {
+    text-align: center;
+}
+
+.intro .blurb-title {
+    grid-area: blurb-title;
+    margin: 0;
+}
+
+.intro .blurb {
+    grid-area: blurb;
+}
+
+article {
+    margin: 0;
+    padding: 0;
+}
+
+article:nth-child(odd) {
+    background: #b3b3b3;
+}
+
+article:nth-child(even) {
+    background: #f2f2f2;
+}
+
+article:last-child {
+    height: 100%;
+}
+
+article h1 {
+    width: 100%;
+    background: #222;
+    color: #01c9c7;
+    padding: 0.5em 2em;
+    margin: 0;
+}
+
+.sample-site {
+    display: inline-block;
+    width: 40%;
+    margin: 0 4em 0 0;
+}
+.sample-site img {
+    width: 100%;
+    height: auto;
+}
+
+.job-entry {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr;
+    grid-row-gap: 0.25em;
+    grid-template-areas: "job-title  description"
+                         "job-time   description";
+    margin-bottom: 2em;
+}
+
+.job-title {
+    grid-area: job-title;
+    margin: 0;
+}
+.job-time {
+    grid-area: job-time;
+    font-style: oblique;
+    margin: 0;
+}
+.job-description {
+    grid-area: description;
+    margin: 0;
+}
+
+.school-entry {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr;
+    grid-row-gap: 0.25em;
+    grid-template-areas: "degree-title  school-name"
+                         "degree-time   school-location";
+    margin-bottom: 2em;
+}
+
+.degree-title {
+    grid-area: degree-title;
+    margin: 0;
+}
+.degree-time {
+    grid-area: degree-time;
+    font-style: oblique;
+    margin: 0;
+    padding-bottom: 1em;
+}
+.school-name {
+    grid-area: school-name;
+    margin: 0;
+}
+.school-location {
+    grid-area: school-location;
+    font-style: oblique;
+    margin: 0;
+}
+
+.skills-chart {
+    display: flex;
+    align-items: stretch;
+    height: 25vh;
+    margin: 2em 0;
+}
+
+.skills-chart li {
+    position: relative;
+    list-style: none;
+    width: 8vw;
+    border-bottom: 1px solid #2c3e5099;
+}
+
+.skills-chart .axis-labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: inherit;
+    border-bottom: none;
+    border-right: 1px solid #2c3e5099;
+    padding-right: 0.5em;
+}
+
+.skills-chart li .bar-label {
+    position: relative;
+    transform: rotate(270deg);
+    transform-origin: top left;
+    bottom: -97%;
+    left: 0.5em;
+    font-family: Vollkorn, Georgia, serif;
+    font-style: oblique;
+    z-index: 1;
+}
+
+.skills-chart .bar {
+    flex: 1 1;
+    margin: 0 0 0 1.75em;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #01c9c7;
+    min-width: 2px;
+    animation-name: bar-fill;
+    animation-duration: 2s;
+}
+
+@keyframes bar-fill {
+    0% { height: 0%; }
+}
+
+footer {
+    padding: 0.75em;
+    text-align: center;
+    background: #222;
+    color: #01c9c7;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 927px) {
+    .greeting {
+        font-size: 1.5em;
+    }
+
+    .site-nav {
+        font-size: 1.1em;
+    }
+
+    .sample-site {
+        width: 90%;
+    }
+
+    .resume-wrapper {
+        margin: 0 auto;
+        border: none;
+        box-shadow: none;
+    }
+
+    .job-entry {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-row-gap: 0.25em;
+        grid-template-areas: "job-title"
+                            "job-time"
+                            "."
+                            "description";
+    }
+
+    .school-entry {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-row-gap: 0.25em;
+        grid-template-areas: "degree-title"
+                            "degree-time"
+                            "school-name"
+                            "school-location";
+        margin-bottom: 2em;
+    }
+    .bar-chart {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .greeting {
+        font-size: 1.3em;
+    }
+
+    .site-nav {
+        font-size: 0.9em;
+    }
+
+    .intro .blurb-title .separator {
+        display: none;
+    }
+
+    .intro .blurb-title .work-title {
+        display: block;
+        font-size: 0.8em;
+        font-style: oblique;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .greeting {
+        font-size: 1.2em;
+    }
+
+    .greeting .pop-title {
+        font-size: 1.6em;
+    }
+
+    .site-nav li.logo img {
+        min-width: 150px;
+    }
+
+    .intro {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "photo" "blurb-title" "blurb";
+    }
+
+    .head-shot {
+        max-width: 75%;
+        margin-bottom: 1.5em;
+    }
+
+    .head-shot figcaption {
+        margin-top: -1em;
+        max-width: 75%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .greeting {
+        font-size: 1.3em;
+    }
+
+    .greeting .pop-title {
+        font-size: 1.4em;
+    }
+
+    .site-nav {
+        font-size: 0.75em;
+        margin: 0;
+        width: 100%;
+    }
+
+    .site-nav li.logo img {
+        min-width: 90px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .greeting {
+        font-size: 1.1em;
+    }
+    .greeting .pop-title {
+        font-size: 1.3em;
+    }
+
+    .site-nav {
+        font-size: 0.55em;
+        margin: 0;
+        width: 100%;
+    }
+
+    .site-nav li.logo img {
+        min-width: 60px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .greeting {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 349px) {
+    .greeting .pop-title {
+        font-size: 1.2em;
+    }
+}
