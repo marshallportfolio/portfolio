@@ -917,12 +917,7 @@ sup {
 }
 
 @font-face {
-    font-display: swap
-    font-family: 'Lato';
-}
-
-
-@font-face {
+    font-display: swap;
     font-family: 'icomoon';
     src: url("fonts/icons/icomoon.eot?-vfzx3z");
     src: url("fonts/icons/icomoon.eot?#iefix-vfzx3z") format("embedded-opentype"), url("fonts/icons/icomoon.ttf?-vfzx3z") format("truetype"), url("fonts/icons/icomoon.woff?-vfzx3z") format("woff"), url("fonts/icons/icomoon.svg?-vfzx3z#icomoon") format("svg");
