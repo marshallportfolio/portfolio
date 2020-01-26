@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles/travel-styles.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" crossorigin="anonymous" async></script>
+    <script>
+        function selectMenuLabel() {
+            $('.mobile-menu-label').toggleClass('menu-selected');
+        }
+
+        document.addEventListener('scroll', toggleBackToTopButton);
+
+        function toggleBackToTopButton() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                document.getElementById('back-to-top').classList.add('show');
+            } else {
+                document.getElementById('back-to-top').classList.remove('show');
+            }
+        }
+    </script>
+    <!--<link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap" rel="stylesheet">-->
+    <style type="text/css">
+        @font-face{font-family:Lato;font-style:normal;font-weight:300;font-display:swap;src:local('Lato Light'),local('Lato-Light'),url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh7USSwaPGQ3q5d0N7w.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Lato;font-style:normal;font-weight:300;font-display:swap;src:local('Lato Light'),local('Lato-Light'),url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh7USSwiPGQ3q5d0.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Lato;font-style:normal;font-weight:400;font-display:swap;src:local('Lato Regular'),local('Lato-Regular'),url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Lato;font-style:normal;font-weight:400;font-display:swap;src:local('Lato Regular'),local('Lato-Regular'),url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Lato;font-style:normal;font-weight:900;font-display:swap;src:local('Lato Black'),local('Lato-Black'),url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh50XSwaPGQ3q5d0N7w.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Lato;font-style:normal;font-weight:900;font-display:swap;src:local('Lato Black'),local('Lato-Black'),url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh50XSwiPGQ3q5d0.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    </style>
+</head>
+<body>
+<a id="top-of-page" aria-label="Top of Page"></a>
+
+<header class="logo-header">
+    <img class="main-logo" src="images/frog_pond_travels_logo_with_frog.svg" alt="Frog Pond Travels Logo">
+    <div class="contact-div">
+        <div class="contact-message"><label for="contact-tel">Contact us 7 days a week!</label></div>
+        <div class="contact-number"><span class="icomoon icon-phone"></span><a id="contact-tel" href="tel:+15555555555">1 (555) 555-5555</a></div></div>
+    <nav class="header-buttons">
+        <ul>
+            <li><a href="end-mock.html"><span class="icomoon icon-user"></span>Sign up</a></li>
+            <li><a href="end-mock.html">Log in</a></li>
+            <li class="header-cart button"><a href="end-mock.html"><span class="icomoon icon-cart"></span><span class="cart-items">0</span></a></li>
+        </ul>
+    </nav>
+    <nav class="mobile-only mobile-menu">
+        <label class="mobile-menu-label" for="mobile-menu-button">&#9776; Menu</label>
+        <input id="mobile-menu-button" class="mobile-menu-button" onclick="selectMenuLabel()" type="checkbox" name="mobile-menu-button">
+
+        <div class="mobile-menu-content">
+            <ul>
+                <li class="selected"><a href="travel.html">Discount Tickets</a></li>
+                <li><a href="end-mock.html">Hotels</a></li>
+                <li><a href="end-mock.html">Car Rentals</a></li>
+                <li><a href="end-mock.html" class="menu-emphasis">Today&apos;s Deals</a></li>
+            </ul>
+            <div class="spacer">&nbsp;</div>
+            <ul>
+                <li><a href="end-mock.html">Crowd Calendar</a></li>
+                <li><a href="end-mock.html">First Time Tips</a></li>
+                <li><a href="end-mock.html">Planning</a></li>
+                <li><a href="end-mock.html" class="menu-emphasis">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="search-bar">
+        <form>
+            <input id="search" type="text" placeholder="Search" aria-label="Search" name="search-field">
+            <a type="submit"><span class="icomoon icon-search"></span></a>
+        </form>
+    </div>
+</header>
+
+<aside class="special-feature">
+    <img class="vip-balloons" src="images/vip-fun-fest-balloonsleft.svg" alt="Party balloons">
+    <img class="vip-title" src="images/vip-fun-fest-headline2.svg" alt="VIP Fun Fest">
+    <div class="vip-ribbon">
+        <div>Frog Pond Travel&apos;s 20th Anniversary Celebration</div>
+        <div class="ribbon ribbon-left ribbon-right feature-accent feature-accent-border">Friday, March 6, 2020 <span class="dot"></span> Universal Orlando Resort</div>
+        <div>2-Park <img class="img-align-middle" src="images/vip-exclusive-for-site-banners.svg" alt="Exclusive Access"> for 1-night</div>
+    </div>
+    <a class="vip-button button get-my-tickets" href="end-mock.html">Get My Tickets</a>
+
+</aside>
+
+<div class="desktop-only">
+    <nav class="main-menu" aria-label="primary">
+        <ul>
+            <li class="selected"><a href="travel.html">Discount Tickets</a></li>
+            <li><a href="end-mock.html">Hotels</a></li>
+            <li><a href="end-mock.html">Car Rentals</a></li>
+            <li><a href="end-mock.html" class="menu-emphasis">Today&apos;s Deals</a></li>
+            <li><div class="spacer">&nbsp;</div></li>
+            <li class="hover-dropdown"><a href="#" class="hover-dropdown-button" aria-haspopup="true">Planning</a>
+                <ul class="hover-dropdown-content" aria-label="submenu">
+                    <li><a href="end-mock.html">Crowd Calendar</a></li>
+                    <li><a href="end-mock.html">First Time Tips</a></li>
+                    <li><a href="end-mock.html">Planning</a></li>
+                    <li><a href="end-mock.html" class="menu-emphasis">Blog</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="main-wrapper">
+    <main class="main-grid">
+        <div class="badge-no-hidden-fees">
+            <span class="icomoon icon-star3 badge-star"></span>
+            <h2 class="badge-header">No Hidden Fees</h2>
+            <p class="badge-description">Free Shipping &amp; Tax Included</p>
+        </div>
+        <h1 class="main-title">Tickets</h1>
+        <div class="column-a">
+            <h2>Florida Resorts</h2>
+            <div class="promo-card-horizontal">
+                <img class="promo-image" src="images/walt-disney-world-1-1639344b4f0.jpg" alt="The Magic Kingdom">
+                <h3 class="promo-title">Walt Disney World&reg; Resort</h3>
+                <div class="promo-savings ribbon ribbon-right"><p>Save Up to $85</p></div>
+                <a class="promo-link" href="end-mock.html">Get My Tickets &gt;</a>
+            </div>
+            <div class="promo-card-horizontal">
+                <img class="promo-image" src="images/universal-orlando-2-16bdd9045c7.jpg" alt="Harry Potter Ride">
+                <h3 class="promo-title">Universal Orlando Resort&trade;</h3>
+                <div class="promo-savings ribbon ribbon-right"><p>Save Up to $150</p></div>
+                <a class="promo-link" href="end-mock.html">Get My Tickets &gt;</a>
+            </div>
+            <div class="promo-card-horizontal">
+                <img class="promo-image" src="images/seaworld-orlando-10-16f42035cdb.jpg" alt="Water Roller Coaster">
+                <h3 class="promo-title">SeaWorld&reg; Orlando</h3>
+                <div class="promo-savings ribbon ribbon-right"><p>Save Up to $183</p></div>
+                <a class="promo-link" href="end-mock.html">Get My Tickets &gt;</a>
+            </div>
+        </div>
+        <div class="column-b">
+            <h2>California Resorts</h2>
+            <div class="promo-card-horizontal">
+                <img class="promo-image" src="images/disneyland-9470-16ae615bb91.jpg" alt="Millenium Falcon">
+                <h3 class="promo-title">Disneyland&reg; Resort</h3>
+                <div class="promo-savings ribbon ribbon-right"><p>Save Up to $119</p></div>
+                <a class="promo-link" href="end-mock.html">Get My Tickets &gt;</a>
+            </div>
+            <div class="promo-card-horizontal">
+                <img class="promo-image" src="images/universal-studios-hollywood-9-16f4203bf2e.jpg" alt="Marilyn Monroe">
+                <h3 class="promo-title">Universal Studios Hollywood&trade;</h3>
+                <div class="promo-savings ribbon ribbon-right"><p>Save Up to $37</p></div>
+                <a class="promo-link" href="end-mock.html">Get My Tickets &gt;</a>
+            </div>
+            <div class="promo-card-horizontal">
+                <img class="promo-image" src="images/seaworld-san-diego-11-16f42052862.jpg" alt="Undersea Ride">
+                <h3 class="promo-title">SeaWorld&reg; San Diego</h3>
+                <div class="promo-savings ribbon ribbon-right"><p>Save Up to $37</p></div>
+                <a class="promo-link" href="end-mock.html">Get My Tickets &gt;</a>
+            </div>
+        </div>
+
+        <div class="see-all"><a href="end-mock.html">See All Destinations</a></div>
+    </main>
+    <aside class="frog-guarantee">
+        <img class="frog-guarantee-image" src="images/wdw-frog-guarantee-banner.svg" alt="The Frog Guarantee">
+        <p>Our tickets are the Exact Same Tickets you receive from the theme parks!</p>
+        <div class="home-authorized">
+            <div class="authorized-logo">
+                <img class="fineprint-image" src="images/retailer-logos/ticket-returns-90day.svg" alt="90 Day Returns where applicable">
+                <p class="fineprint"><em>*Where applicable</em></p>
+            </div>
+            <div class="authorized-logo">
+                <img src="images/retailer-logos/wdw-authorized-ticket-seller-logo.svg" alt="Authorized Walt Disney World Ticket Seller">
+            </div>
+            <div class="authorized-logo">
+                <img src="images/retailer-logos/dlr-authorized-ticket-seller-logo.svg" alt="Authorized Disneyland Ticket Seller">
+            </div>
+            <div class="authorized-logo">
+                <img src="images/retailer-logos/uor-authorized-ticket-seller-logo-300.png" alt="Authorized Universal Orlando Resort Ticket Seller">
+            </div>
+            <div class="authorized-logo">
+                <img src="images/retailer-logos/ush-authorized-ticket-seller-logo.png" alt="Authorized Universal Hollywood Studios Ticket Seller">
+            </div>
+            <div class="authorized-logo">
+                <img src="images/retailer-logos/seaworld-authorized-ticket-seller-logo-300.jpg" alt="Authorized SeaWorld Orlando Ticket Seller">
+            </div>
+        </div>
+    </aside>
+    </div>
+</div>
+
+<article class="seasonal-starwars-marketing">
+    <h1 style="width: 0; height: 0; margin: 0; padding: 0; overflow: hidden;">Star Wars: Rise of the Resistance</h1>
+    <div class="marketing-row">
+        <img src="images/star_wars_sm.png" alt="AT-AT Walkers">
+        <div class="starwars-marketing-copy">
+            <img class="disney-logo" src="images/logo-walt-disney-world.svg" alt="Walt Disney World">
+            <p><span>Star Wars:</span> Rise of the Resistance</p>
+            <div class="ribbon ribbon-right ribbon-left">Now Open!</div>
+        </div>
+        <a class="button get-my-tickets" href="end-mock.html">Get My Tickets!</a>
+    </div>
+</article>
+
+<article class="featured-theme-parks">
+    <h1>Featured Theme Park Tickets</h1>
+    <div class="flex-row offset">
+        <div class="promo-card-vertical">
+            <h2 class="promo-title">Walt Disney World<sup>&reg;</sup> Resort</h2>
+            <img class="promo-image" src="images/4-day-park-hopper-plus-extra-day-free-11-16393d8471f.jpg" alt="Magic Kingdom Characters">
+            <p class="promo-description">4-Day Disney Theme Park Ticket with Park Hopper<sup>&reg;</sup> Option</p>
+            <div class="promo-savings ribbon ribbon-right">Save up to $62</div>
+            <p class="promo-fineprint fineprint">vs gate price (Adult)</p>
+            <a class="promo-tickets button get-my-tickets" href="end-mock.html">Get My Tickets</a>
+        </div>
+        <div class="promo-card-vertical">
+            <h2 class="promo-title">Walt Disney World<sup>&reg;</sup> Resort</h2>
+            <img class="promo-image" src="images/4-day-magic-your-way-plus-2-extra-days-1-16393d90439.jpg" alt="Cinderella">
+            <p class="promo-description">4-Day Disney Theme Park Base Ticket &ndash; with Extra Day</p>
+            <div class="promo-savings ribbon ribbon-right">Save up to $54</div>
+            <p class="promo-fineprint fineprint">vs gate price (Adult)</p>
+            <a class="promo-tickets button get-my-tickets" href="end-mock.html">Get My Tickets</a>
+        </div>
+        <div class="promo-card-vertical">
+            <h2 class="promo-title">Universal Orlando Resort<sup>&trade;</sup></h2>
+            <img class="promo-image" src="images/universal-2-park-5-day-universal-park-to-park-promo-14-169c6221ee2.jpg" alt="Universal Studios logo">
+            <p class="promo-description">Universal 2-Day Park-to-Park Ticket &ndash; Plus Extra Day</p>
+            <div class="promo-savings ribbon ribbon-right">Save up to $53</div>
+            <p class="promo-fineprint fineprint">vs gate price (Adult)</p>
+            <a class="promo-tickets button get-my-tickets" href="end-mock.html">Get My Tickets</a>
+        </div>
+        <div class="promo-card-vertical">
+            <h2 class="promo-title">Walt Disney World<sup>&reg;</sup> Resort</h2>
+            <img class="promo-image" src="images/seaworld-orlando-single-day-all-day-dine-20-16d448228eb.jpg" alt="SeaWorld Raft Ride">
+            <p class="promo-description">SeaWorld Orlando Single Day</p>
+            <div class="promo-savings ribbon ribbon-right">Save up to $21</div>
+            <p class="promo-fineprint fineprint">vs gate price (Gen. Admission)</p>
+            <a class="promo-tickets button get-my-tickets" href="end-mock.html">Get My Tickets</a>
+        </div>
+    </div>
+</article>
+
+<article class="featured-promotions">
+    <h1 class="ribbon ribbon-right ribbon-left"><span>Featured Promotions</span></h1>
+    <p class="description">Exclusive EXTRA savings applied in shopping cart, on top of already discounted tickets, hotels and more!</p>
+    <div class="flex-row">
+        <div class="featured-promo-card">
+            <img class="featured-promo-image" src="images/4-day-park-hopper-plus-extra-day-free-11-16393d8471f.jpg" alt="Magic Kingdom Characters">
+            <p class="featured-promo-description">Combine these select Disney, Universal or SeaWorld tickets for an EXTRA $5 OFF each combo!</p>
+            <a class="featured-promo-link" href="end-mock.html">Learn More &gt;</a>
+        </div>
+        <div class="featured-promo-card">
+            <img class="featured-promo-image" src="images/extra-10-off-each-universal-orlando-ticket-excludes-1-day-tickets-24-167313fdd12.png" alt="EXTRA $10 OFF Each Universal Orlando Ticket (Excludes 1-Day Tickets)">
+            <p class="featured-promo-description">EXTRA $10 OFF Each Universal Orlando Ticket (Excludes 1-Day Tickets)</p>
+            <a class="featured-promo-link" href="end-mock.html">Learn More &gt;</a>
+        </div>
+    </div>
+    <div class="now-offering-banner flex-row">
+        <div class="banner-div family-photo">
+            <img src="images/dlr-hotellaunch-family-photo.png" alt="Family playing in water">
+            <div class="ribbon ribbon-right ribbon-left">Save up to $69/night</div>
+        </div>
+        <div class="banner-div now-offering">
+            <img src="images/dlr-hotel-launch-nowoffering-v2-headline.svg" alt="Now Offering Hotels of the Disneyland Resort">
+            <a class="button" href="end-mock.html">Book My Room</a>
+        </div>
+        <div class="banner-div desktop-only">
+            <img src="images/dlr-hotellaunch-bed.svg" alt="Tad and Lily on hotel bed">
+        </div>
+    </div>
+    <div class="see-all">
+        <a href="end-mock.html">See All Promos</a>
+    </div>
+</article>
+
+<footer class="footer">
+    <p class="fineprint">©2000–2020 Frog Pond Travels. All rights reserved.  |  <a href="end-mock.html" target="_self">Privacy Policy</a>  |  <a href="end-mock.html" target="_self">Terms &amp; Conditions</a></p>
+    <p class="fineprint">As to Disney photos, logos, properties: ©Disney</p>
+
+    <div class="back-to-top-container">
+        <a id="back-to-top" href="#top-of-page">
+            <img src="images/backtotop.svg" class="desktop-only" alt="Back to Top" width="65">
+            <img src="images/backtotop_mobile.svg" class="mobile-only" alt="Back to Top" width="35">
+        </a>
+    </div>
+</footer>
+
+</body>
+</html>
