@@ -25,6 +25,7 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    align-content: center;
     padding: 0;
     width: 100%;
     margin: 0;
@@ -33,20 +34,33 @@ body {
 
 .site-nav li {
     display: inline-block;
-    border-bottom: 4px solid #01c9c7;
+    border-bottom: 4px solid transparent;
     border-top: 2px solid #666;
     padding: 1.5em 1em 1em 1em;
     margin: 0;
+    animation-name: border-expand;
+    animation-delay: 0.25s;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes border-expand {
+    0% { border-bottom-color: transparent; }
+    60% { border-bottom-color: transparent; }
+    100% { border-bottom-color: #01c9c7;  }
 }
 
 .site-nav li a, .site-nav li a:visited {
     text-decoration: none;
     color: #000;
     font-size: 1.2em;
+    transition: color 1s ease-out;
 }
 
 .site-nav li a:hover, .site-nav li a:visited:hover, .site-nav li a:active, .site-nav li a:visited:active {
     color: #01c9c7;
+    transition: color 0.5s ease;
 }
 
 .site-nav li.logo {
@@ -57,6 +71,13 @@ body {
     width: 100%;
     height: auto;
     min-width: 255px;
+    animation-name: image-expand;
+    animation-duration: 2s;
+}
+
+@keyframes image-expand {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1;  }
 }
 
 .greeting {
@@ -161,11 +182,40 @@ article h1 {
     margin: 0;
 }
 
+article h1.animate-now {
+    animation-name: header-expand;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    transform-origin: center left;
+}
+
+@keyframes header-expand {
+    0% { transform: scale(0, 1); opacity: 0; }
+    100% { transform: scale(1, 1); opacity: 1;  }
+}
+
+.sample-sites-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .sample-site {
     display: inline-block;
     width: 40%;
     margin: 0 4em 0 0;
+    padding: 1em;
+    border: 6px solid transparent;
+    border-radius: 3%;
+    transition: border-color 1s ease-out;
 }
+
+.sample-site:hover {
+    border-color: #01c9c7;
+    transition: border-color 1s ease;
+}
+
 .sample-site img {
     width: 100%;
     height: auto;
@@ -267,14 +317,22 @@ article h1 {
     right: 0;
     bottom: 0;
     left: 0;
-    background: #01c9c7;
+    background: #f2f2f2;
     min-width: 2px;
+    opacity: 1;
+}
+
+.bar.animate-now {
     animation-name: bar-fill;
     animation-duration: 2s;
+    animation-delay: 0.25s;
+    animation-fill-mode: forwards;
+    transform-origin: center bottom;
 }
 
 @keyframes bar-fill {
-    0% { height: 0%; }
+    0% { transform: scale(1, 0); opacity: 0; background-color: transparent; }
+    100% { transform: scale(1, 1); opacity: 1; background-color: #01c9c7; }
 }
 
 footer {
@@ -431,5 +489,19 @@ footer p {
 @media only screen and (max-width: 349px) {
     .greeting .pop-title {
         font-size: 1.2em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    h1.animate-now {
+        animation: none;
+    }
+
+    .bar.animate-now {
+        animation: none;
+    }
+
+    .site-nav li.logo img {
+        animation: none;
     }
 }

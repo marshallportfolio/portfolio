@@ -1,0 +1,30 @@
+{
+  "ea": {
+    "TOP_NAV": {
+      "BACK_TO_PORTFOLIO_BUTTON": "Back to portfolio page"
+    },
+    "MAIN_NAV": {
+      "DASHBOARDS": "Dashboards",
+      "REPORTS": "Reports",
+      "SETTINGS": "Settings"
+    },
+    "DASHBOARDS": {
+      "PIE_CHART_TITLE": "Weekly Sales",
+      "BAR_CHART_TITLE": "Top Sellers",
+      "LINE_CHART_TITLE": "Week-Over-Week Trend",
+      "CHART_DATES": "{{startDate}} - {{endDate}}"
+    },
+    "REPORTS": {
+      "DATE": "Date",
+      "ID": "ID",
+      "PRODUCT": "Product",
+      "QUANTITY": "Quantity"
+    },
+    "SETTINGS": {
+      "CHOOSE_A_LANGUAGE": "Choose a display language"
+    },
+    "SHARED": {
+      "DATA_IS_LOADING": "Data is loading..."
+    }
+  }
+}

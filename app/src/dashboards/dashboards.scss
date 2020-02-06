@@ -1,0 +1,223 @@
+@import '../app-colors';
+
+.dashboards {
+    --chart-color1: #{$primary-brand-color};
+    --chart-color2: #{$highlight-color};
+    --chart-color3: #{$title-bar-background-color};
+    --chart-color4: #{$text-color};
+    --chart-color5: #dc9982;
+    --chart-color6: #d7c15c;
+    --chart-color7: #b68346;
+    --chart-color8: #b24d5f;
+    --chart-color9: #d5e0ac;
+    --chart-color10: #40bec9;
+    --chart-color11: #b69d8e;
+    --chart-color12: #9d5168;
+    --chart-color13: #beb4af;
+
+
+    --ws1: #121414;
+    --ws2: #daa520;
+    --ws3: #e1bf45;
+    --ws4: #c49135;
+    --ws5: #843b21;
+
+
+
+
+
+
+    $widget-size: 200px;
+
+    .dashboard-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .chart-wrapper {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2em 4em;
+    }
+
+    .chart-title {
+        margin-bottom: 0.25em;
+    }
+
+    .chart-dates {
+        font-size: 1em;
+        margin-top: 0;
+    }
+
+    .dashboard-chart {
+        height: $widget-size;
+        width: $widget-size;
+        margin: 0 0 1em 0;
+        padding: 0;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+            }
+
+            .dashboard-chart-horizontal-axis {
+                display: inline-flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: $widget-size;
+                border-right: 1px solid;
+                padding-right: 0.25em;
+            }
+        }
+    }
+
+    .pie-chart {
+        height: $widget-size;
+        width: $widget-size;
+        position: relative;
+        border-radius: 100%;
+        overflow: hidden;
+    }
+
+    .pie-segment {
+        --degrees: calc((var(--offset, 0) / 100) * 360);
+        --a: calc(var(--over50, 0) * -100%);
+        --b: calc((1 + var(--over50, 0)) * 100%);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transform: translate(0, -50%) rotate(90deg) rotate(calc(var(--degrees) * 1deg));
+        transform-origin: 50% 100%;
+        clip-path: polygon(var(--a) var(--a), var(--b) var(--a), var(--b) var(--b), var(--a) var(--b));
+        z-index: calc(1 + var(--over50));
+    }
+
+    .pie-segment:after, .pie-segment:before {
+        background-color: var(--bg, $primary-brand-color);
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+
+    .pie-segment:before {
+        --degrees: calc((var(--value, 45) / 100) * 360);
+        transform: translate(0, 100%) rotate(calc(var(--degrees) * 1deg));
+        transform-origin: 50% 0;
+    }
+
+    .pie-segment:after {
+        opacity: var(--over50, 0);
+    }
+
+    .chart-legend {
+        tr:nth-child(even) {
+            background-color: $table-stripe;
+        }
+
+        .legend-color {
+            padding: 0 2px;
+            width: calc(1em + 4px);
+        }
+    }
+
+    .bar-chart {
+        display: flex;
+        align-items: stretch;
+        height: $widget-size;
+        width: $widget-size;
+        margin: 2em 0;
+
+        .bar-group {
+            position: relative;
+            list-style: none;
+            border-bottom: 1px solid #2c3e5099;
+
+            .bar-label {
+                position: relative;
+                transform: rotate(270deg);
+                transform-origin: top left;
+                bottom: -97%;
+                left: 0.5em;
+                font-family: Vollkorn, Georgia, serif;
+                font-style: oblique;
+                z-index: 1;
+                color: $text-color;
+                white-space: nowrap;
+                padding: 0.75em 0;
+            }
+
+            .bar {
+                background-color: $highlight-color;
+                flex: 1 1;
+                margin: 0 0 0 0.25em;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                min-width: 2px;
+                height: calc(var(--percent) * 1%);
+            }
+        }
+    }
+
+    .line-chart {
+        position: relative;
+        height: $widget-size;
+        border-bottom: 1px solid;
+
+        .line-segment {
+            background-color: $primary-brand-color;
+            height: 3px;
+            width: calc(var(--hypotenuse) * 1px);
+            transform: rotate(calc(var(--angle) * 1deg));
+            transform-origin: left bottom;
+            position: absolute;
+        }
+
+        .line-point {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid $highlight-color;
+            position: relative;
+            bottom: 5px;
+            right: 2.5px;
+            background-color: $body-background-color;
+
+            &:before {
+                content: attr(data-value) " ";
+                background-color: $table-stripe;
+                text-align: center;
+                width: 5em;
+                padding: 0.25em 0.5em;
+                border: 1px solid;
+                display: none;
+                position: absolute;
+                transform: rotate(calc(-1deg * var(--angle)));
+            }
+
+            &:hover:before {
+                display: block;
+                z-index: 10;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .dashboards {
+        .chart-wrapper {
+            margin: 2em 2em;
+        }
+    }
+}

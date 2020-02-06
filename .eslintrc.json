@@ -1,0 +1,32 @@
+{
+ "extends": "standard",
+ "plugins": [
+  "standard",
+  "promise"
+ ],
+ "env": {
+  "browser": true,
+  "node": true,
+  "phantomjs": true,
+  "jasmine": true,
+  "protractor": true
+ },
+ "globals": {
+  "angular": false,
+  "d3": false,
+  "moment": false
+ },
+ "rules": {
+  "indent": ["error", 4, {"SwitchCase": 1}],
+  "no-multiple-empty-lines": ["error", {"max": 2, "maxEOF": 0}],
+  "no-tabs": ["off"],
+  "operator-linebreak": ["off"],
+  "padded-blocks": ["off"],
+  "quotes": ["error", "single", {"avoidEscape": true}],
+  "semi": ["error", "always"],
+  "space-before-function-paren": ["error", "never"],
+  "spaced-comment": ["off"],
+  "space-infix-ops": ["off"],
+  "space-in-parens": ["off"]
+ }
+}

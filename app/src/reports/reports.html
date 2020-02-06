@@ -1,0 +1,22 @@
+<spinner data-ng-show="vm.loading"></spinner>
+<section data-ng-hide="vm.loading" class="ea-reports">
+    <h1 data-translate="ea.MAIN_NAV.REPORTS"></h1>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" translate="ea.REPORTS.DATE" class="number"></th>
+                <th scope="col" translate="ea.REPORTS.ID" class="number"></th>
+                <th scope="col" translate="ea.REPORTS.PRODUCT" class="text"></th>
+                <th scope="col" translate="ea.REPORTS.QUANTITY" class="number"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="row in vm.reportData">
+                <td class="number">{{vm.formatDate(row.date)}}</td>
+                <td class="number">{{row.id}}</td>
+                <td class="text">{{row.product}}</td>
+                <td class="number">{{row.quantity}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

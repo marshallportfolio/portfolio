@@ -1,0 +1,70 @@
+@import '../app-colors';
+.ea-reports {
+    table {
+        margin: 1em 1.5em;
+        border: 1px solid $dark-background-color;
+        max-width: calc(100% - 3em);
+
+        thead {
+            width: calc(100% - 1em);
+            display: table;
+            table-layout: fixed;
+        }
+
+        tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        tbody {
+            display: block;
+            overflow: auto;
+            height: calc(80vh - 7em);
+        }
+
+        th {
+            font-weight: 700;
+            background-color: $dark-background-color;
+            color: $body-background-color;
+            text-align: left;
+            padding: 0 1em;
+        }
+
+        td {
+            padding: 0 1em;
+        }
+
+        tr:nth-child(even) {
+            background-color: $highlight-color;
+        }
+
+        .number {
+            text-align: right;
+        }
+
+        .text {
+            text-align: left;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .ea-reports {
+        table {
+           overflow: auto;
+
+            thead {
+                display: table-header-group;
+            }
+
+            tbody {
+                display: table-row-group;
+            }
+
+            tbody tr {
+                display: table-row;
+            }
+        }
+    }
+}

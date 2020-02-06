@@ -1,0 +1,30 @@
+{
+  "ea": {
+    "TOP_NAV": {
+      "BACK_TO_PORTFOLIO_BUTTON": "ポートフォリオに戻る"
+    },
+    "MAIN_NAV": {
+      "DASHBOARDS": "ダッシュボード",
+      "REPORTS": "報告",
+      "SETTINGS": "設定"
+    },
+    "DASHBOARDS": {
+      "PIE_CHART_TITLE": "今週の売上",
+      "BAR_CHART_TITLE": "トップセラー",
+      "LINE_CHART_TITLE": "週ごとの傾向",
+      "CHART_DATES": "{{startDate}} から {{endDate}}"
+    },
+    "REPORTS": {
+      "DATE": "日付",
+      "ID": "ID",
+      "PRODUCT": "商品名",
+      "QUANTITY": "量"
+    },
+    "SETTINGS": {
+      "CHOOSE_A_LANGUAGE": "表示言語を選択してください"
+    },
+    "SHARED": {
+      "DATA_IS_LOADING": "データの読み込み中"
+    }
+  }
+}

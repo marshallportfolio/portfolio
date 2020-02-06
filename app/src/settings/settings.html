@@ -1,0 +1,16 @@
+<section>
+    <h1 translate="ea.MAIN_NAV.SETTINGS"></h1>
+    <form>
+        <fieldset>
+            <legend class="title" translate="ea.SETTINGS.CHOOSE_A_LANGUAGE"></legend>
+            <div>
+                <input type="radio" data-ng-model="vm.lang" name="lang" id="en-US" value="en-US" data-ng-change="vm.changeLanguageAndLocale()">
+                <label for="en-US">English</label>
+            </div>
+            <div>
+                <input type="radio" data-ng-model="vm.lang"  name="lang" id="ja" value="ja" data-ng-change="vm.changeLanguageAndLocale()">
+                <label for="ja">日本語</label>
+            </div>
+        </fieldset>
+    </form>
+</section>
