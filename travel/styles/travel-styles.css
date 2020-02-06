@@ -1818,7 +1818,7 @@ sup {
 
     .logo-header {
         display: grid;
-        grid-template-columns: 2em auto;
+        grid-template-columns: 40% auto;
         grid-template-rows: auto;
         grid-template-areas: "logo-image logo-image"
                              "contact-div contact-div"

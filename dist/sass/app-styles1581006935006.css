@@ -355,6 +355,9 @@ h2 {
     color: #121414;
     transition: all 1s; }
 
+.exit-menu {
+  display: none; }
+
 .nav-menu {
   grid-area: nav;
   background-color: #464646;
@@ -440,6 +443,8 @@ h2 {
     font-size: 1.25em; }
   .exit-button {
     display: none; }
+  .exit-menu {
+    display: block; }
   .nav-menu {
     position: absolute;
     left: 0;

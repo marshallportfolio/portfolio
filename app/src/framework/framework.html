@@ -1,13 +1,14 @@
 <header class="header">
     <span class="hamburger" ng-click="vm.showNavMenu = !vm.showNavMenu; vm.showMobileMenu = !vm.showMobileMenu">&#x2630;</span>
     <span class="app-title">ACME Enterprise SAAS App</span> <span class="org-divider"></span> <span class="org-name">Widgets LLC</span>
-    <a href="../index.html" class="exit-button" translate="ea.TOP_NAV.BACK_TO_PORTFOLIO_BUTTON"></a>
+    <a href="../index.html" class="exit-button" data-translate="ea.TOP_NAV.BACK_TO_PORTFOLIO_BUTTON"></a>
 </header>
 <nav class="nav-menu" ng-class="{'mobile-menu-activated': vm.showMobileMenu}">
     <ul>
-        <li ng-click="vm.selectMenuItem('dashboards')" ng-class="{'selected': vm.currentMenu === 'dashboards'}"><a ui-sref="dashboards" translate="ea.MAIN_NAV.DASHBOARDS"></a></li>
-        <li ng-click="vm.selectMenuItem('reports')" ng-class="{'selected': vm.currentMenu === 'reports'}"><a ui-sref="reports" translate="ea.MAIN_NAV.REPORTS"></a></li>
-        <li ng-click="vm.selectMenuItem('settings')" ng-class="{'selected': vm.currentMenu === 'settings'}"><a ui-sref="settings" translate="ea.MAIN_NAV.SETTINGS"></a></li>
+        <li ng-click="vm.selectMenuItem('dashboards')" ng-class="{'selected': vm.currentMenu === 'dashboards'}"><a ui-sref="dashboards" data-translate="ea.MAIN_NAV.DASHBOARDS"></a></li>
+        <li ng-click="vm.selectMenuItem('reports')" ng-class="{'selected': vm.currentMenu === 'reports'}"><a ui-sref="reports" data-translate="ea.MAIN_NAV.REPORTS"></a></li>
+        <li ng-click="vm.selectMenuItem('settings')" ng-class="{'selected': vm.currentMenu === 'settings'}"><a ui-sref="settings" data-translate="ea.MAIN_NAV.SETTINGS"></a></li>
+        <li class="exit-menu"><a href="../index.html" data-translate="ea.TOP_NAV.BACK_TO_PORTFOLIO_BUTTON"></a></li>
     </ul>
 </nav>
 <main class="main-content">

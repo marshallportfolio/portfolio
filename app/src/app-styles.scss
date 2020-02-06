@@ -96,6 +96,10 @@ h2 {
     }
 }
 
+.exit-menu {
+    display: none;
+}
+
 .nav-menu {
     grid-area: nav;
     background-color: $dark-background-color;
@@ -213,6 +217,10 @@ h2 {
 
     .exit-button {
         display: none;
+    }
+
+    .exit-menu {
+        display: block;
     }
 
     .nav-menu {
