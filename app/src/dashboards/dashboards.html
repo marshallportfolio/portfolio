@@ -7,7 +7,10 @@
             <figure class="dashboard-chart">
                 <spinner data-small="small" data-ng-show="vm.pieLoading"></spinner>
                 <ul class="pie-chart" data-ng-hide="vm.pieLoading">
-                    <li data-ng-repeat="item in vm.pieChartData" class="pie-segment" style="--offset: {{item.offset}};  --value: {{item.percent}}; --bg: var(--chart-color{{$index + 1}}); --over50: {{item.over50}}"><span class="screen-reader-only">{{item.item}} ({{item.percent}})</span></li>
+                    <li data-ng-repeat="item in vm.pieChartData" class="pie-segment" style="--offset: {{item.offset}};  --value: {{item.percent}}; --bg: var(--chart-color{{$index + 1}}); --over50: {{item.over50}}">
+                        <span class="screen-reader-only">{{item.item}} ({{item.percent}})</span>
+                    </li>
+                </ul>
             </figure>
             <table class="chart-legend">
                 <tr data-ng-repeat="item in vm.pieChartData"><td class="legend-color" style="background-color: var(--chart-color{{$index + 1}});"></td><td>{{item.item}}</td><td class="{{item.type | lowercase}}">{{item.value}}</td></tr>
@@ -19,10 +22,10 @@
             <figure class="dashboard-chart">
                 <spinner data-small="small" data-ng-show="vm.barLoading"></spinner>
                 <ul class="bar-chart" data-ng-hide="vm.barLoading">
-                    <li class="dashboard-chart-horizontal-axis"><div>{{vm.barChartData.topMostPoint}}</div><div>0</div></li>
-                    <li data-ng-repeat="item in vm.barChartData" class="bar-group">
+                    <li class="dashboard-chart-horizontal-axis"><div>100%</div><div>0%</div></li>
+                    <li data-ng-repeat="item in vm.barChartData" class="bar-group" data-value="{{item.value}}" style="--percent: {{item.percent}};">
                         <div class="bar-label">{{item.item}}</div>
-                        <div class="bar" style="--value: {{item.value}}; --percent: {{item.percent}}"></div>
+                        <div class="bar" style="--value: {{item.value}};"></div>
                     </li>
                 </ul>
             </figure>
@@ -37,7 +40,8 @@
                 <spinner data-small="small" data-ng-show="vm.lineLoading"></spinner>
                 <ul class="line-chart" data-ng-hide="vm.lineLoading">
                     <li class="dashboard-chart-horizontal-axis"><div>{{vm.lineChartData.topMostPoint}}</div><div>0</div></li>
-                    <li data-ng-repeat="details in vm.lineChartData" class="line-segment" style="--hypotenuse: {{details.hypotenuse}}; --angle: {{details.angle}}; bottom: {{details.bottom}}px; left: {{details.left}}px;">
+                    <li data-ng-repeat="details in vm.lineChartData" style="--y: {{details.bottom}}px; --x: {{details.left}}px;">
+                        <div class="line-segment" style="--hypotenuse: {{details.hypotenuse}}; --angle: {{details.angle}};"></div>
                         <div class="line-point" data-value="{{details.value}}"></div>
                     </li>
                 </ul>

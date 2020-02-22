@@ -141,6 +141,24 @@
             list-style: none;
             border-bottom: 1px solid #2c3e5099;
 
+            &:before {
+                background-color: $table-stripe;
+                border: 1px solid;
+                bottom: calc((var(--percent) - 3) * 1%);
+                content: attr(data-value) " ";
+                display: none;
+                left: 1em;
+                padding: 0.25em 0.5em;
+                position: absolute;
+                text-align: center;
+                width: 5em;
+            }
+
+            &:hover:before {
+                display: block;
+                z-index: 10;
+            }
+
             .bar-label {
                 position: relative;
                 transform: rotate(270deg);
@@ -170,45 +188,47 @@
     }
 
     .line-chart {
-        position: relative;
-        height: $widget-size;
         border-bottom: 1px solid;
-
-        .line-segment {
-            background-color: $primary-brand-color;
-            height: 3px;
-            width: calc(var(--hypotenuse) * 1px);
-            transform: rotate(calc(var(--angle) * 1deg));
-            transform-origin: left bottom;
-            position: absolute;
-        }
+        height: $widget-size;
+        position: relative;
 
         .line-point {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            border: 2px solid $highlight-color;
-            position: relative;
-            bottom: 5px;
-            right: 2.5px;
             background-color: $body-background-color;
+            border: 2px solid $highlight-color;
+            border-radius: 50%;
+            bottom: calc(var(--y) - 6px);
+            height: 12px;
+            left: calc(var(--x) - 4.5px);
+            position: absolute;
+            width: 12px;
 
             &:before {
-                content: attr(data-value) " ";
                 background-color: $table-stripe;
-                text-align: center;
-                width: 5em;
-                padding: 0.25em 0.5em;
                 border: 1px solid;
+                content: attr(data-value) " ";
                 display: none;
-                position: absolute;
+                padding: 0.25em 0.5em;
+                position: relative;
+                text-align: center;
                 transform: rotate(calc(-1deg * var(--angle)));
+                width: 5em;
             }
 
             &:hover:before {
                 display: block;
                 z-index: 10;
             }
+        }
+
+        .line-segment {
+            background-color: $primary-brand-color;
+            bottom: var(--y);
+            height: 3px;
+            left: var(--x);
+            position: absolute;
+            transform: rotate(calc(var(--angle) * 1deg));
+            transform-origin: left bottom;
+            width: calc(var(--hypotenuse) * 1px);
         }
     }
 

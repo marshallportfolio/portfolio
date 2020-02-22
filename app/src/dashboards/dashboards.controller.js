@@ -20,7 +20,6 @@
         vm.pieChartData;
         vm.barChartData;
         vm.lineChartData;
-
         vm.formatDate = appService.formatDate;
 
         init();
@@ -84,6 +83,7 @@
             sortValues(values);
 
             var topMostPoint = values[0].value;
+            var widgetSize = 200;
             var leftOffset = 40; //padding for left axis labels
             var nextPoint = 0;
             var rise = 0;
@@ -106,8 +106,8 @@
                 currentValue.left = leftOffset > 0 ? leftOffset - 2 : leftOffset; //adjust for border
                 leftOffset += base;
 
-                currentValue.bottom = 150 * (currentValue.value / topMostPoint);
-                nextPoint = 150 * (values[i+1].value / topMostPoint);
+                currentValue.bottom = widgetSize * (currentValue.value / topMostPoint);
+                nextPoint = widgetSize * (values[i+1].value / topMostPoint);
 
                 rise = currentValue.bottom - nextPoint;
                 currentValue.hypotenuse = Math.sqrt((base * base) + (rise * rise));
@@ -118,7 +118,7 @@
 
             var lastPoint = {
                 left: leftOffset - 2,
-                bottom: 150 * (values[values.length - 1].value / topMostPoint),
+                bottom: widgetSize * (values[values.length - 1].value / topMostPoint),
                 hypotenuse: 0,
                 angle: 0,
                 value: values[values.length - 1].value,
@@ -136,14 +136,14 @@
             return cssValues;
         }
 
+        function sortValues(values) {
+            values.sort(function(a, b) { return b.value - a.value; });
+        }
+
+        function sum(total, value) {
+            return total + value.value;
+        }
+
     };
-
-    function sortValues(values) {
-        values.sort(function(a, b) { return b.value - a.value; });
-    }
-
-    function sum(total, value) {
-        return total + value.value;
-    }
 
 })();

@@ -12,7 +12,8 @@
       "PIE_CHART_TITLE": "Weekly Sales",
       "BAR_CHART_TITLE": "Top Sellers",
       "LINE_CHART_TITLE": "Week-Over-Week Trend",
-      "CHART_DATES": "{{startDate}} - {{endDate}}"
+      "CHART_DATES": "{{startDate}} - {{endDate}}",
+      "PIE_LABEL": "{{label}}: {{value}}%"
     },
     "REPORTS": {
       "DATE": "Date",
