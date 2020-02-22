@@ -8,11 +8,6 @@
     dashboardsService.$inject = ['$http', '$log', 'appService'];
 
     function dashboardsService($http, $log, appService) {
-        var service = {
-            getPieChartData: getPieChartData,
-            getBarChartData: getBarChartData,
-            getLineChartData: getLineChartData
-        };
 
         var reportData = {
             startDate: moment().subtract(6, 'days').format('YYYYMMDD'),
@@ -39,6 +34,13 @@
                     value: 20
                 }
             ]
+        };
+
+        var service = {
+            getPieChartData: getPieChartData,
+            getBarChartData: getBarChartData,
+            getLineChartData: getLineChartData,
+            getReportData: reportData
         };
 
         return service;

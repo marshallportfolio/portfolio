@@ -12,7 +12,8 @@
       "PIE_CHART_TITLE": "今週の売上",
       "BAR_CHART_TITLE": "トップセラー",
       "LINE_CHART_TITLE": "週ごとの傾向",
-      "CHART_DATES": "{{startDate}}から{{endDate}}"
+      "CHART_DATES": "{{startDate}}から{{endDate}}",
+      "PIE_LABEL": "{{label}}: {{value}}%"
     },
     "REPORTS": {
       "DATE": "日付",
