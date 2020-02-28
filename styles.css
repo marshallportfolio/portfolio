@@ -160,6 +160,7 @@ a, a:visited {
 article {
     margin: 0;
     padding: 0;
+    scroll-margin-top: 14rem;
 }
 
 article:nth-child(odd) {
@@ -441,7 +442,7 @@ footer p {
     }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 560px) {
     .greeting {
         font-size: 1.3em;
     }
@@ -458,6 +459,10 @@ footer p {
 
     .site-nav li.logo img {
         min-width: 90px;
+    }
+
+    article {
+        scroll-margin-top: 7rem;
     }
 }
 

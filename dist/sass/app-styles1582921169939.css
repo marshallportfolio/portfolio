@@ -448,10 +448,11 @@ h2 {
   .nav-menu {
     position: absolute;
     left: 0;
-    top: 3.5em;
+    top: 4.5em;
     border-top: 2px solid #fefefe;
     width: 100%;
-    display: none; }
+    display: none;
+    z-index: 100; }
     .nav-menu.mobile-menu-activated {
       display: block; } }
 
@@ -551,7 +552,8 @@ h2 {
     .dashboards .bar-chart .bar-group {
       position: relative;
       list-style: none;
-      border-bottom: 1px solid #2c3e5099; }
+      border-bottom: 1px solid #2c3e5099;
+      max-width: calc(100% / var(--max-bar-width)); }
       .dashboards .bar-chart .bar-group:before {
         background-color: #ddd;
         border: 1px solid;
@@ -571,7 +573,6 @@ h2 {
         transform: rotate(270deg);
         transform-origin: top left;
         bottom: -97%;
-        left: 0.5em;
         font-family: Vollkorn, Georgia, serif;
         font-style: oblique;
         z-index: 1;

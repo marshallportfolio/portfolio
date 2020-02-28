@@ -226,10 +226,11 @@ h2 {
     .nav-menu {
         position: absolute;
         left: 0;
-        top: 3.5em;
+        top: 4.5em;
         border-top: 2px solid $body-background-color;
         width: 100%;
         display: none;
+        z-index: 100;
 
         &.mobile-menu-activated {
             display: block;

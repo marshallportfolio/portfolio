@@ -140,6 +140,7 @@
             position: relative;
             list-style: none;
             border-bottom: 1px solid #2c3e5099;
+            max-width: calc(100% / var(--max-bar-width));
 
             &:before {
                 background-color: $table-stripe;
@@ -164,7 +165,6 @@
                 transform: rotate(270deg);
                 transform-origin: top left;
                 bottom: -97%;
-                left: 0.5em;
                 font-family: Vollkorn, Georgia, serif;
                 font-style: oblique;
                 z-index: 1;

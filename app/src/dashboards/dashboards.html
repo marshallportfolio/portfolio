@@ -21,7 +21,7 @@
             <h3 class="chart-dates" data-translate="ea.DASHBOARDS.CHART_DATES" data-translate-values="{startDate: vm.formatDate(vm.startDate), endDate: vm.formatDate(vm.endDate)}"></h3>
             <figure class="dashboard-chart">
                 <spinner data-small="small" data-ng-show="vm.barLoading"></spinner>
-                <ul class="bar-chart" data-ng-hide="vm.barLoading">
+                <ul class="bar-chart" data-ng-hide="vm.barLoading" style="--max-bar-width: {{vm.barChartData.length + 1}}">
                     <li class="dashboard-chart-horizontal-axis"><div>100%</div><div>0%</div></li>
                     <li data-ng-repeat="item in vm.barChartData" class="bar-group" data-value="{{item.value}}" style="--percent: {{item.percent}};">
                         <div class="bar-label">{{item.item}}</div>
